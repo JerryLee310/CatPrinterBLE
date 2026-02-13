@@ -153,9 +153,25 @@ A modern GUI application is now available! The GUI provides all the same functio
 - **Real-time Logging**: Color-coded activity log with timestamps
 - **Device Status**: View battery level, printer status, and device information
 
-### GUI Project
+### How to Run the GUI (运行方式)
 
-The GUI version is located in the `CatPrinterGUI` folder. To build and run:
+#### Pre-compiled Version (预编译版本)
+
+**The easiest way to run the GUI is to use the pre-compiled version in the `Releases` folder:**
+
+1. Navigate to the `Releases` folder in the project directory
+2. Double-click `CatPrinterGUI.exe` to launch the application
+3. No installation or .NET runtime required - it's a self-contained executable!
+
+**最简单的运行方式是使用 `Releases` 文件夹中的预编译版本：**
+
+1. 进入项目目录中的 `Releases` 文件夹
+2. 双击 `CatPrinterGUI.exe` 即可启动应用程序
+3. 无需安装或 .NET 运行时 - 这是一个独立的可执行文件！
+
+#### Building from Source (从源码构建)
+
+If you want to build from source, the GUI version is located in the `CatPrinterGUI` folder:
 
 ```bash
 cd CatPrinterGUI
@@ -166,12 +182,11 @@ dotnet run
 To publish as a standalone executable:
 
 ```bash
-dotnet publish -c Release -r win-x64 --self-contained true
+dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=true -p:EnableWindowsTargeting=true
 ```
 
 ### Requirements
 
-- Windows 10 version 19041 or higher
-- .NET 8.0 Runtime
-- Bluetooth Low Energy (BLE) adapter
-- MXW01 thermal printer
+- Windows 10 version 19041 or higher (Windows 10 版本 19041 或更高)
+- Bluetooth Low Energy (BLE) adapter (蓝牙低功耗适配器)
+- MXW01 thermal printer (MXW01 热敏打印机)

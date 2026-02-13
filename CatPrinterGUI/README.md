@@ -50,24 +50,43 @@
 - 支持Bluetooth Low Energy (BLE)的蓝牙适配器
 - MXW01热敏打印机
 
-## 安装和构建
+## 安装和运行
 
-### 从源码构建
+### 方式一：使用预编译版本（推荐）
 
-1. 确保安装.NET 8.0 SDK
+**这是最简单的方式，无需安装任何依赖：**
+
+1. 进入项目根目录的 `Releases` 文件夹
+2. 双击 `CatPrinterGUI.exe` 即可运行
+3. 无需安装 .NET 运行时，这是一个完全独立的可执行文件
+
+**优点：**
+- ✅ 无需安装 .NET SDK 或运行时
+- ✅ 开箱即用
+- ✅ 包含所有必需的依赖项
+
+### 方式二：从源码构建
+
+如果您想从源码构建或修改代码：
+
+1. 确保安装 .NET 8.0 SDK
 2. 克隆或下载项目
-3. 在项目目录中运行：
+3. 在 `CatPrinterGUI` 目录中运行：
 
 ```bash
 dotnet build
 dotnet run
 ```
 
-### 生成独立可执行文件
+### 生成新的独立可执行文件
+
+如果您修改了代码并想生成新的可执行文件：
 
 ```bash
-dotnet publish -c Release -r win-x64 --self-contained true
+dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=true -p:EnableWindowsTargeting=true
 ```
+
+编译后的文件位于：`bin/Release/net8.0-windows10.0.19041.0/win-x64/publish/CatPrinterGUI.exe`
 
 ## 使用方法
 
