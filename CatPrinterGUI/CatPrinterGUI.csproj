@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <Title>Cat Printer GUI</Title>
+    <Authors>MaikelChan</Authors>
+    <Description>GUI for Cat Printer BLE - Control your MXW01 thermal printer</Description>
+    <Product>Cat Printer GUI</Product>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="InTheHand.BluetoothLE" Version="4.0.41" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.8" />
+  </ItemGroup>
+
+</Project>
