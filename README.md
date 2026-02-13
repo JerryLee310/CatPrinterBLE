@@ -140,3 +140,38 @@ You can check the changelog [here](https://github.com/MaikelChan/CatPrinterBLE/b
 There are some commands / features that I still haven't figured out, so it would be nice to reverse-engineer them so the program is more feature complete. But they're not high priority as the most important stuff is already implemented.
 
 I don't plan on supporting other printers for now, as I don't have any other printer to be able to make tests.
+
+## Graphical User Interface (GUI)
+
+A modern GUI application is now available! The GUI provides all the same functionality as the command-line version but with a user-friendly interface.
+
+### Features
+
+- **Visual Connection Management**: One-click scan and connect with status indicator
+- **Print Settings**: Adjust intensity, select print mode, and choose dithering algorithm through an intuitive UI
+- **Paper Control**: Easy-to-use buttons for paper eject/retract
+- **Real-time Logging**: Color-coded activity log with timestamps
+- **Device Status**: View battery level, printer status, and device information
+
+### GUI Project
+
+The GUI version is located in the `CatPrinterGUI` folder. To build and run:
+
+```bash
+cd CatPrinterGUI
+dotnet build
+dotnet run
+```
+
+To publish as a standalone executable:
+
+```bash
+dotnet publish -c Release -r win-x64 --self-contained true
+```
+
+### Requirements
+
+- Windows 10 version 19041 or higher
+- .NET 8.0 Runtime
+- Bluetooth Low Energy (BLE) adapter
+- MXW01 thermal printer
