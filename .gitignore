@@ -21,6 +21,8 @@ mono_crash.*
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
+# But keep the Releases folder at the root with compiled executables
+!/Releases/
 x64/
 x86/
 [Ww][Ii][Nn]32/
